@@ -1,6 +1,6 @@
 Software tools required:
 
-##Ganache-cli
+## Ganache-cli
 
 `which ganache-cli`
 
@@ -14,11 +14,7 @@ Expected output:
 
 Ganache CLI v6.1.3 (ganache-core: 2.1.2)
 
-Available Accounts
-==================
-(0) 0xa643e677b31a3cb9fcae39bda1087ef751f1ec18
-(1) 0xcdeadafd0b7e9db36b2b8ef678579e56c1793d2d
-(2) 0xc5e358b355e4dc674da68d6e6321bd010d409b4c
+
 ..
 
 ## Truffle

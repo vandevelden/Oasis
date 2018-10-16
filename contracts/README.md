@@ -33,6 +33,7 @@ Truffle v4.1.14 - a development framework for Ethereum
 
 Usage: truffle <command> [options]
 
+## Deploy Oasis Contracts
 run 
 
 `nohup ganache-cli > /tmp/ganache.out 2>&1 &`

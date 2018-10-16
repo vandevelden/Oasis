@@ -1,9 +1,9 @@
 pragma solidity ^0.4.17;
 
-import "../../openzeppelin-solidity/contracts/token/ERC20/ERC20Mintable.sol";
-import "../../openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
+import "../../node_modules/openzeppelin-solidity/contracts/token/ERC20/MintableToken.sol";
+import "../../node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
 
-contract OasisToken is ERC20, ERC20Mintable {
+contract OasisToken is ERC20, MintableToken {
     
 
     string public name;

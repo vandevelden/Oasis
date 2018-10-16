@@ -1,4 +1,4 @@
-Software tools required:
+Steps required:
 
 ## Ganache-cli
 

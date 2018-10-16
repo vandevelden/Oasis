@@ -1,0 +1,75 @@
+[
+
+    {   "Name": "Oasis-System",   
+        "Sector": "Service",
+        "Status": "Business",
+        "Members": "n/a",
+        "Address": "Coinbase",
+        "Allocation": "0",
+        "Allocation date": "n/a",
+        "Balance": "0"
+    },
+
+    {
+        "Name": "Farm-Apple",
+        "Sector": "Agriculture",
+        "Status": "Business",
+        "Members": 97,
+        "Address": 2,
+        "Allocation": 1500000,
+        "Allocation date": "n/a",
+        "Balance": "0"
+    },
+
+    {   "Name": "Farm-Beans",    
+        "Sector": "Agriculture",
+        "Status": "Business",
+        "Members": 54,
+        "Address": 3,
+        "Allocation": 320000,
+        "Allocation date": "n/a",
+        "Balance": "0"
+    },
+
+    {   "Name":"Farm-Cotton",    
+        "Sector": "Agriculture",
+        "Status": "Business",
+        "Members": 273,
+        "Address": 4,
+        "Allocation": 35010000,
+        "Allocation date": "n/a",
+        "Balance": "0"
+    },
+
+    {   "Name": "Town-South",   
+        "Sector": "Rural Residential",
+        "Status": "community",
+        "Members": 20000,
+        "Address": 5,
+        "Allocation": 1650000,
+        "Allocation date": "n/a",
+        "Balance": "0"
+    },
+
+    {
+        "Name": "Town-East",    
+        "Sector": "Rural Residential",
+        "Status": "community",
+        "Members": 30000,
+        "Address": 6,
+        "Allocation": 1990000,
+        "Allocation date": "n/a",
+        "Balance": "0"
+    },
+
+    {   "Name": "Open-Market",   
+        "Sector": "Service",
+        "Status": "Business",
+        "Members": "n/a",
+        "Address": 7,
+        "Allocation": "n/a",
+        "Allocation date": "n/a",
+        "Balance": "0"
+    }
+    
+]

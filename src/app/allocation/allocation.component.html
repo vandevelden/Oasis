@@ -1,0 +1,113 @@
+
+<div class="main-content-inner">
+  <div class="row">
+      <!-- data table start -->
+      <div class="col-12 mt-5">
+          <div class="card">
+              <div class="card-body">
+                  <h4 class="header-title">Allocation Configuration</h4>
+                  <div class="single-table">
+                      <div class="table-responsive">
+                          <table class="table table-hover progress-table text-center">
+                              <thead class="text-uppercase">
+                                  <tr>
+                                          <th *ngFor="let head of items[0] | keys">{{head}}</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  
+                                      <tr *ngFor="let item of items">           
+                                              <td *ngFor="let list of item | keys">{{item[list]}}</td>
+                                            </tr>
+
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+            
+                        
+              </div>
+          </div>
+      </div>
+
+      
+      <!-- data table end -->
+ 
+      <div class="col-xl-5 col-lg-12 mt-5">
+              <div class="card h-full">
+                  <div class="card-body">
+                      <h4 class="header-title">Water Distribution by Sector</h4>
+                      <canvas id="seolinechart8" height="233"></canvas>
+                  </div>
+              </div>
+      </div>
+      
+          <div class="col-xl-7 col-lg-12 mt-5">
+                  <div class="card">
+                      <div class="card-body">
+                          <h4 class="header-title">Allocation Requests</h4>
+                          <div id="accordion6" class="according gradiant-bg">
+                              <div class="card">
+                                  <div class="card-header">
+                                      <a class="card-link" data-toggle="collapse" href="#accordion61">Reqeust #1</a>
+                                  </div>
+                                  <div id="accordion61" class="collapse show" data-parent="#accordion6">
+                                      <div class="card-body">
+                                          Village A needs more allocation of water due to a draught.
+                                          This will ensure crops...
+                                          Nemo eaque porro alias assumenda accusamus incidunt odio molestiae maxime quo atque in et quaerat, vel unde aliquam aperiam quidem consectetur omnis dicta officiis? Dolorum, error dolorem!
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="card">
+                                  <div class="card-header">
+                                      <a class="collapsed card-link" data-toggle="collapse" href="#accordion62">
+                                          Reqeust #2</a>
+                                  </div>
+                                  <div id="accordion62" class="collapse" data-parent="#accordion6">
+                                      <div class="card-body">
+                                          Factory A needs more allocation due to increased production in garments. 
+                                          This is due to recent expansion of production line and .... 
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="card">
+                                  <div class="card-header">
+                                      <a class="collapsed card-link" data-toggle="collapse" href="#accordion63">
+                                          Request #3</a>
+                                  </div>
+                                  <div id="accordion63" class="collapse" data-parent="#accordion6">
+                                      <div class="card-body">
+                                          Town123 sees an decrease of migrate workers in holiday season.
+                                          Allocation could be reduced as a result.
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="card">
+                                      <div class="card-header">
+                                          <a class="collapsed card-link" data-toggle="collapse" href="#accordion63">
+                                              Request #4</a>
+                                      </div>
+                                      <div id="accordion63" class="collapse" data-parent="#accordion6">
+                                          <div class="card-body">
+                                               <div class="card">
+                                  <div class="card-header">
+                                      <a class="collapsed card-link" data-toggle="collapse" href="#accordion63">
+                                          Request #3</a>
+                                  </div>
+                                  <div id="accordion63" class="collapse" data-parent="#accordion6">
+                                      <div class="card-body">
+                                              Nemo eaque porro alias assumenda accusamus incidunt odio molestiae maxime quo atque in et quaerat, vel unde aliquam aperiam quidem consectetur omnis dicta officiis? Dolorum, error dolorem!
+                                      </div>
+                                  </div>
+                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>   
+      </div>
+</div>

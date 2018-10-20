@@ -1,4 +1,5 @@
 /*--------------  coin_sales4 bar chart start ------------*/
+function initBarChart(){
 if ($('#coin_sales4').length) {
     var ctx = document.getElementById("coin_sales4").getContext('2d');
     var chart = new Chart(ctx, {
@@ -807,4 +808,9 @@ if ($('#socialads').length) {
         ]
     });
 }
+
+}
+
+window.initBarChart = initBarChart;
+window.initBarChart();
 /*--------------  bar chart 14 highchart END ------------*/

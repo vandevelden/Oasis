@@ -1,5 +1,6 @@
 /* ------------- map amchart 1 start ------------ */
 
+function initMap(){
 /**
  * SVG path for target icon
  */
@@ -1811,3 +1812,6 @@ function createCustomMarker(image) {
     return holder;
 }
 /* ------------- map amchart 7 END ------------ */
+}
+window.initMap = initMap;
+window.initMap();

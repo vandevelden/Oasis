@@ -53,7 +53,7 @@ export class EthcontractService {
     let account0 = null;
     let total0 = 0;
 
-    const artifacts = require('../../../contracts/build/contracts/OasisToken.json');
+    const artifacts = require('../../contracts/build/contracts/OasisToken.json');
     const contract = require('truffle-contract');
     const MyContract = contract(artifacts);
     MyContract.setProvider(web3.currentProvider);
@@ -101,7 +101,7 @@ export class EthcontractService {
 
     let market_token_balance = 0;
 
-    const artifacts = require('../../../contracts/build/contracts/OasisToken.json');
+    const artifacts = require('../../contracts/build/contracts/OasisToken.json');
     const contract = require('truffle-contract');
     const MyContract = contract(artifacts);
     MyContract.setProvider(web3.currentProvider);

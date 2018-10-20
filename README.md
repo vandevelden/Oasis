@@ -15,6 +15,9 @@ Before building and deploying the project in its entirety, please install smart 
 run `cd contracts`
 follow up instructions on readme and make sure the contracts and the local chain is up.
 
+ganache-cli must be running
+use remix to interact with smart contracts.
+
 ## Oasis Admin Console
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

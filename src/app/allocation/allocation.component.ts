@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EthcontractService } from '../ethcontract.service';
+import $ from 'jquery';
 
 @Component({
   selector: 'app-allocation',
@@ -37,7 +38,10 @@ export class AllocationComponent implements OnInit {
 
   }
   ngOnInit() {
+    $(document).ready( ()=>{
+      window.initPieChart();
     
-  }
+      
+    });
 
 }

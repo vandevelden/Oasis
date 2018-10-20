@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EthcontractService } from '../ethcontract.service';
 import { TextAttribute } from '../../../node_modules/@angular/compiler/src/render3/r3_ast';
+import $ from 'jquery';
 
 @Component({
   selector: 'app-tokens',
@@ -81,6 +82,12 @@ export class TokensComponent implements OnInit {
 
 
   ngOnInit() {
+    $(document).ready( ()=>{
+      window.initLineChart();
+      window.initMap();
+      window.initBarChart();
+      
+    });
   }
 
 }

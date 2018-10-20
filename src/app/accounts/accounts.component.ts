@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EthcontractService } from '../ethcontract.service';
+import $ from 'jquery';
+
 
 @Component({
   selector: 'app-accounts',
@@ -33,7 +35,10 @@ export class AccountsComponent implements OnInit {
 
   }
   ngOnInit() {
-    
-  }
+    $(document).ready( ()=>{
+      window.initLineChart();
+      window.initBarChart();
+      
+    });
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import $ from 'jquery';
 
 @Component({
   selector: 'app-market',
@@ -24,6 +25,9 @@ export class MarketComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
-
+    $(document).ready( ()=>{
+      window.initLineChart(); 
+      window.initBarChart();
+      
+    });
 }

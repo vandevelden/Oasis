@@ -25,9 +25,10 @@ export class MarketComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    $(document).ready( ()=>{
-      window.initLineChart(); 
+    $(document).ready( () => {
+      window.initLineChart();
       window.initBarChart();
-      
     });
+  }
+
 }

@@ -45,3 +45,5 @@ export class AllocationComponent implements OnInit {
     });
 
 }
+
+}

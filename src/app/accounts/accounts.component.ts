@@ -36,9 +36,11 @@ export class AccountsComponent implements OnInit {
   }
   ngOnInit() {
     $(document).ready( ()=>{
+      
       window.initLineChart();
       window.initBarChart();
       
     });
 
+}
 }

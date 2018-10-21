@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 
 import * as Web3 from 'web3';
 declare let require: any;
+declare let window: any;
 import data from './allocations.json';
+import { Meta } from '../../node_modules/@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root'
@@ -16,20 +18,17 @@ export class EthcontractService {
 
   private contracts: {};
   private web3Provider: null;
-  private web3: null;
-  private allocations: {};
-  // constructor() {
-  //   this.web3Provider = new (Web3.providers.HttpProvider('http://localhost:8545'));
-  // }
 
+  private allocations: {};
+  private accounts: {};
   constructor() {
-    // if (typeof this.web3 !== 'undefined' || this.web3 === null) {
-    //   this.web3Provider = this.web3.currentProvider;
-    // } else {
-    // this.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
-    // }
-    // this.web3 = new Web3(this.web3Provider);
-    // }
+
+    if ( typeof window.web3 !== 'undefined') {
+      this.web3Provider = window.web3.currentProvider;
+      } else {
+      this.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
+      }
+    window.web3 = new Web3(this.web3Provider);
     this.allocations = data;
   }
 
@@ -45,7 +44,46 @@ export class EthcontractService {
 
   getAllAccounts()
   {
-    
+    const artifacts = require('../../contracts/build/contracts/OasisPolicy.json');
+    const contract = require('truffle-contract');
+    const contract_address = '0x39b38a5a4502dc3881a4c805fdfcf12c1e3a0713';
+    const MyContract = contract(artifacts, contract_address);
+    MyContract.setProvider(this.web3Provider);
+
+    return new Promise((resolve, reject) => {
+
+      console.log('getting all registered users from smart contract');
+      MyContract.deployed().then(function(instance) {
+        const meta = instance;
+        return meta.getUserCount();
+      })
+      .then(function(count, meta) {
+        
+        for (var i=0; i< count; i++){
+          return meta.getUserAtIndex.call(i);
+          
+          //this.accounts.push(meta.getUserAtIndex(i));
+        }  
+
+      })
+      .catch(function(error) {
+        return reject('error!');
+      });
+
+    MyContract.deployed().then(function(instance) {
+      const meta = instance;
+      return meta.balanceOf.call(coinbase_address, {from: coinbase_address});
+    }).then(function(balance) {
+      console.log('getbalance called');
+      console.log(balance.c[0]);
+      coinbase_token_balance = balance.c[0];
+      console.log(total_supply);
+      resolve({total: total_supply, coinbase_address: coinbase_address, coinbase_balance: coinbase_token_balance});
+
+    }).catch(function(e) {
+      return reject('error!');
+    });
+  });
   }
   getContractAccount() {
     const Web3 = require('web3');
@@ -53,7 +91,7 @@ export class EthcontractService {
     let account0 = null;
     let total0 = 0;
 
-    const artifacts = require('../../contracts/build/contracts/OasisToken.json');
+    const artifacts = require('../../../contracts/build/contracts/OasisToken.json');
     const contract = require('truffle-contract');
     const MyContract = contract(artifacts);
     MyContract.setProvider(web3.currentProvider);
@@ -87,7 +125,7 @@ export class EthcontractService {
     });
   }
 
-  tokensBalance(){
+  tokensBalance_old(){
     const Web3 = require('web3');
     const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
     
@@ -101,7 +139,7 @@ export class EthcontractService {
 
     let market_token_balance = 0;
 
-    const artifacts = require('../../contracts/build/contracts/OasisToken.json');
+    const artifacts = require('../../contracts/build/contracts/OasisPolicy.json');
     const contract = require('truffle-contract');
     const MyContract = contract(artifacts);
     MyContract.setProvider(web3.currentProvider);
@@ -111,6 +149,64 @@ export class EthcontractService {
 
       console.log(web3.eth.accounts);
       web3.eth.getCoinbase(function(err, account) {
+        console.log('getting coinbase account');
+        console.log(account);
+        coinbase_address = account;
+      });
+
+      MyContract.deployed().then(function(instance) {
+        const meta = instance;
+        return meta.totalSupply();
+      })
+      .then(function(total) {
+        total_supply = total.c[0];
+        // console.log(total_supply);
+        //   resolve({tokenAccount: account0, tokenBalance: total0});
+      })
+      .catch(function(error) {
+        return reject(error);
+      });
+
+    MyContract.deployed().then(function(instance) {
+      const meta = instance;
+      return meta.balanceOf.call(coinbase_address, {from: coinbase_address});
+    }).then(function(balance) {
+      console.log('getbalance called');
+      console.log(balance.c[0]);
+      coinbase_token_balance = balance.c[0];
+      console.log(total_supply);
+      resolve({total: total_supply, coinbase_address: coinbase_address, coinbase_balance: coinbase_token_balance});
+
+    }).catch(function(e) {
+      return reject('error!');
+    });
+  });
+
+  }
+
+  tokensBalance(){
+    
+    let total_supply = 100;
+
+    let coinbase_address = '0x0';
+    
+    let coinbase_token_balance = 17;
+    
+    let market_address = ' ';
+
+    let market_token_balance = 0;
+
+    const artifacts = require('../../contracts/build/contracts/OasisPolicy.json');
+    const contract = require('truffle-contract');
+    const contract_address = '0xfa5af931a399b220d0d95ef122a33096e0a6857f';
+    const MyContract = contract(artifacts, contract_address);
+    MyContract.setProvider(this.web3Provider);
+
+
+    return new Promise((resolve, reject) => {
+
+      console.log(window.web3.eth.accounts);
+      window.web3.eth.getCoinbase(function(err, account) {
         console.log('getting coinbase account');
         console.log(account);
         coinbase_address = account;
@@ -145,7 +241,6 @@ export class EthcontractService {
   });
 
   }
-
   // the following function queries Oasis system account address onchain
   getCoinBaseAccount() {
     const Web3 = require('web3');

@@ -42,14 +42,7 @@ run
 
 `truffle migrate --network local_ganache --compile-all --reset`
 
-expected output:
-...
-
-Replacing OasisToken...
-  ... 0x75e978d40e8da412d6e35a277da2998042a1331edb4d1762d64c4ae81e9407cc
-  OasisToken: 0x7d2e8564c6f68ff19a661a6cbc1449269b5e2f76
-Saving successful migration to network...
-  ... 0xbf7188453325501b11a45bc239714ad1078178465a106b50b88b052865a60e65
-Saving artifacts...
+The contract file in use is 
+"OasisPolicy.sol" make sure this file is deployed.
 
 
